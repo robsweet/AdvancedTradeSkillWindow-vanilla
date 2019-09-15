@@ -63,7 +63,7 @@ function ATSWCS_UpdateSkillList()
 			skillbutton.skillname=atsw_uncategorized[offset+i].name;
 			local color=ATSWTypeColor[atsw_uncategorized[offset+i].type];
 			if(color) then
-				ATSW_SetTextColor(skillbutton, color.r, color, g, color.b);
+				ATSW_SetTextColor(skillbutton, color.r, color.g, color.b, 1, "GameFontNormalSmall");
 			end
 		else
 			skillbutton:Hide();
@@ -109,7 +109,7 @@ function ATSWCS_UpdateSkillList()
 					if(i>=1 and i<=17) then
 						skillbutton:SetText(atsw_customsorting[UnitName("player")][atsw_selectedskill][atsw_customheaders[UnitName("player")][atsw_selectedskill][header].name][skill].name);
 						skillframe.skillname=atsw_customsorting[UnitName("player")][atsw_selectedskill][atsw_customheaders[UnitName("player")][atsw_selectedskill][header].name][skill].name;
-						ATSW_SetTextColor(skillbutton, ATSWTypeColor[atsw_customsorting[UnitName("player")][atsw_selectedskill][atsw_customheaders[UnitName("player")][atsw_selectedskill][header].name][skill].type].r, ATSWTypeColor[atsw_customsorting[UnitName("player")][atsw_selectedskill][atsw_customheaders[UnitName("player")][atsw_selectedskill][header].name][skill].type].g, ATSWTypeColor[atsw_customsorting[UnitName("player")][atsw_selectedskill][atsw_customheaders[UnitName("player")][atsw_selectedskill][header].name][skill].type].b);
+						skillbutton:SetTextColor(ATSWTypeColor[atsw_customsorting[UnitName("player")][atsw_selectedskill][atsw_customheaders[UnitName("player")][atsw_selectedskill][header].name][skill].type].r, ATSWTypeColor[atsw_customsorting[UnitName("player")][atsw_selectedskill][atsw_customheaders[UnitName("player")][atsw_selectedskill][header].name][skill].type].g, ATSWTypeColor[atsw_customsorting[UnitName("player")][atsw_selectedskill][atsw_customheaders[UnitName("player")][atsw_selectedskill][header].name][skill].type].b);
 						skillframe:Show();
 						skillbutton:Show();
 						skillbutton:SetNormalTexture("");
@@ -125,7 +125,7 @@ function ATSWCS_UpdateSkillList()
 						if(i>=1 and i<=17) then
 							skillbutton:SetText(ATSWCS_NOTHINGINCATEGORY);
 							skillframe.skillname=ATSWCS_NOTHINGINCATEGORY;
-							skillbutton:SetTextColor(0.6, 0.6, 0.6);
+							skillbutton:SetTextColor(0.6, 0.6, 0.6, 1, "GameFontNormalSmall");
 							skillframe:Show();
 							skillbutton:Show();
 							skillbutton:SetNormalTexture("");
@@ -146,6 +146,7 @@ function ATSWCS_UpdateSkillList()
 						skillbutton:SetText(ATSWCS_NOTHINGINCATEGORY);
 						skillframe.skillname=ATSWCS_NOTHINGINCATEGORY;
 						ATSW_SetTextColor(skillbutton, 0.6, 0.6, 0.6);
+
 						skillframe:Show();
 						skillbutton:Show();
 						skillbutton:SetNormalTexture("");
@@ -182,8 +183,8 @@ function ATSWCS_UpdateSkillList()
 	end
 	FauxScrollFrame_Update(ATSWCSUListScrollFrame, totalcount, 23, 16);
 	FauxScrollFrame_Update(ATSWCSSListScrollFrame, totalcount2, 17, 16);
-	ATSW_CreateSkillListing(self);
-	ATSWFrame_Update(self);
+	ATSW_CreateSkillListing();
+	ATSWFrame_Update();
 end
 
 function ATSWCS_UpdateUncategorizedList()
@@ -321,7 +322,7 @@ function ATSWCS_Delete(skillName,onlySkill)
 	ATSWCS_UpdateSkillList();
 end
 
-function ATSWCSCSkillButton_OnClick(self, skillName)
+function ATSWCSCSkillButton_OnClick(self,skillName)
 	if(self:GetParent().btype=="header") then
 		for i=1,table.getn(atsw_customheaders[UnitName("player")][atsw_selectedskill]),1 do
 			if(atsw_customheaders[UnitName("player")][atsw_selectedskill][i].name==skillName) then

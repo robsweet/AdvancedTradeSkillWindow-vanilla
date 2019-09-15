@@ -140,8 +140,26 @@ function ATSW_GetTradeSkillTools(index)
 	end	
 end
 
+
+function ATSW_inspect(o)
+   if type(o) == 'table' then
+      local s = '{ '
+      for k,v in pairs(o) do
+         if type(k) ~= 'number' then k = '"'..k..'"' end
+         s = s .. '['..k..'] = ' .. ATSW_inspect(v) .. ','
+      end
+      return s .. '} '
+   else
+      return tostring(o)
+   end
+end
+
 function ATSW_SetTextColor(obj, red, green, blue, alpha, font_name)
-	ATSW_DisplayMessage("Called SetTextColor for type '"..type(obj).."'")
+	ATSW_DisplayMessage("Called SetTextColor for '"..obj:GetName().."',type '"..type(obj).."'")
+	if type(obj) == "table" then
+
+		print(ATSW_inspect(obj))
+	end
 	font_name = font_name or "GameFontNormal"
 	local font_obj = obj:GetNormalFontObject();
 	if not font_obj then

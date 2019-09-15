@@ -19,10 +19,10 @@
 				ATSWCSSkillButton_OnClick(self.skillname);
 			</OnClick>
 			<OnEnter>
-				ATSW_SetTextColor(getglobal(self:GetName().."SubText"), HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
+				_G[self:GetName().."SubText"]:SetTextColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
 			</OnEnter>
 			<OnLeave>
-				ATSW_SetTextColor(getglobal(self:GetName().."SubText"), self.r, self.g, self.b);
+				_G[self:GetName().."SubText"]:SetTextColor(self.r, self.g, self.b, 1, "GameFontNormalSmall");
 			</OnLeave>
 		</Scripts>
 		<ButtonText name="$parentText" inherits="GameFontNormal" justifyH="LEFT">
@@ -59,10 +59,10 @@
 				ATSWCSCSkillButton_OnClick(self, self:GetParent().skillname);
 			</OnClick>
 			<OnEnter>
-				ATSW_SetTextColor(getglobal(self:GetName().."SubText"),HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
+				_G[self:GetName().."SubText"]:SetTextColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
 			</OnEnter>
 			<OnLeave>
-				ATSW_SetTextColor(getglobal(self:GetName().."SubText"), self.r, self.g, self.b);
+				_G[self:GetName().."SubText"]:SetTextColor(self.r, self.g, self.b);
 			</OnLeave>
 		</Scripts>
 		<NormalTexture file="Interface\Buttons\UI-MinusButton-UP">
