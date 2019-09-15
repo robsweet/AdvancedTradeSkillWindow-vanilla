@@ -140,3 +140,18 @@ function ATSW_GetTradeSkillTools(index)
 	end	
 end
 
+function ATSW_SetTextColor(obj, red, green, blue, alpha, font_name)
+	ATSW_DisplayMessage("Called SetTextColor for type '"..type(obj).."'")
+	font_name = font_name or "GameFontNormal"
+	local font_obj = obj:GetNormalFontObject();
+	if not font_obj then
+		obj:SetNormalFontObject(font_name);
+		font_obj = obj:GetNormalFontObject();
+	end
+	if alpha then
+		font_obj:SetTextColor(red, green, blue, alpha);
+	else
+		font_obj:SetTextColor(red, green, blue);
+	end
+	obj:SetNormalFontObject(font_obj);
+end
