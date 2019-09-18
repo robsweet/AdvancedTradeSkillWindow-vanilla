@@ -1,4 +1,4 @@
-# AdvancedTradeSkillWindow for Vanilla
+# AdvancedTradeSkillWindow for Classic
 
 ![Imgur](http://i.imgur.com/7EVSPrE.jpg)
 

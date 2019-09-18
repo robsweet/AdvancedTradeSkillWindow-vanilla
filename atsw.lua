@@ -1,4 +1,4 @@
--- Advanced Trade Skill Window v0.5.5b for Vanilla
+-- Advanced Trade Skill Window v0.5.5b for Classic
 -- copyright 2006 by Rene Schneider (Slarti on EU-Blackhand), 2017 by laytya
 
 -- main script file
