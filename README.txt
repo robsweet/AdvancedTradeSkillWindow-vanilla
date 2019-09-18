@@ -2,6 +2,7 @@ Advanced Trade Skill Window v0.5.5b for Vanilla
 a World of Warcraft UI Addon
 written 2006 by Rene Schneider (Slarti on EU-Blackhand)
 fixed 2017 by laytya
+ported for Classic by Morkett on US-Westfall
 ----------------------------------------------------------------
 
 1. Installation

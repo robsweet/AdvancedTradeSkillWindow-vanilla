@@ -90,7 +90,7 @@ v0.5.0:
 
 #Downloads:
 
-https://github.com/laytya/AdvancedTradeSkillWindow-vanilla/releases
+https://github.com/robsweet/AdvancedTradeSkillWindow-vanilla/releases
 
 #Installation:
 

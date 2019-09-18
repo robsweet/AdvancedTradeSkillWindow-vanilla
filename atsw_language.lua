@@ -4,7 +4,7 @@
 -- French Language by Nilyn (EU Dalaran Alliance Server)
 -- Espaсol por Jsr1976-Fili
 
-ATSW_VERSION = "ATSW ".. GetAddOnMetadata("AdvancedTradeSkillWindow", "Version").." by laytya";
+ATSW_VERSION = "ATSW ".. GetAddOnMetadata("AdvancedTradeSkillWindow", "Version").." by Morkett";
 
 if(GetLocale()=="deDE") then
 	ATSW_SORTBYHEADERS = "nach Kategorien sortieren";
